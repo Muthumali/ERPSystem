@@ -28,7 +28,7 @@
 </head>
 <body>
 <!--Navigation Start-->
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-primary  navbar-fixed-*">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">ERP SYSTEM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
                         <a class="nav-link" id="linkOrder" href="#" >Reports</a>
 
                     <li class="nav-item">
-                        <a class="nav-link " id="linkItem" href="#" >Items</a>
+                        <a class="nav-link " id="linkItem" href="#itemForm" >Items</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " id="linkCustomer" href="#customerForm" >Customers</a>
@@ -63,23 +63,11 @@
     </section>
 <!--Dashboard Content End-->
 <!--Customer Content start-->
-        <section class="container-fluid mt-3 " id="customerForm">
 
+        <section class="container-fluid mt-3 " id="customerForm">
+            <form method="POST" action="customer.php">
             <section class="row mt-3 justify-content-around">
-                <div class="col-12 col-md-4">
-                    <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2 bg-primary">
-                        <form method="POST" action="customer.php">
-                        <h1 class="h1 mb-3">Manage Customer</h1>
-                        <div class="mb-3">
-                            <label class="form-label" for="srcCusID">Search Customer</label>
-                            <input class="form-control" id="srcCusID" placeholder="ID" type="text"><br>
-                            <button type="button" class="btn btn-success" id="searchCustomer">Search</button>
-                        </div>
-                        <button type="button" class="btn btn-success" id="addCustomer">Add</button>
-                        <button type="button" class="btn btn-danger" id="deleteCustomer">Delete</button>
-                        <button type="button" class="btn btn-secondary" id="updateCustomer">Update</button>
-                    </div>
-                </div>
+               
                 <div class="col-12 col-md-5">
                     <div class="mb-2">
                         <label class="form-label " for="cusID"  id="lblCusID">ID</label>
@@ -133,6 +121,20 @@
                         <input class="form-control" name="district" id="cusDis" placeholder="District" type="text">
                     </div>
                 </div>
+                <div class="col-12 col-md-4">
+                    <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2 bg-primary">
+                        
+                        <h1 class="h1 mb-3">Manage Customer</h1>
+                        <div class="mb-3">
+                            <label class="form-label" for="srcCusID">Search Customer</label>
+                            <input class="form-control" id="srcCusID" placeholder="ID" type="text"><br>
+                            <button type="button" class="btn btn-success" id="searchCustomer">Search</button>
+                        </div>
+                        <button type="button" class="btn btn-success" id="addCustomer">Add</button>
+                        <button type="button" class="btn btn-danger" id="deleteCustomer">Delete</button>
+                        <button type="button" class="btn btn-secondary" id="updateCustomer">Update</button>
+                    </div>
+                </div>
             </section>
             <section class="row mt-4">
                 <div class="col">
@@ -160,22 +162,9 @@
 
 <!--Item Content start-->
 <section class="container-fluid mt-3 " id="itemForm">
-
+    <form method="post" action="item.php">
     <section class="row mt-3 justify-content-around">
-        <div class="col-12 col-md-4">
-            <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2 bg-primary">
-                <form method="post" action="item.php"></form>
-                <h1 class="h1 mb-3">Manage Item</h1>
-                <div class="mb-3">
-                    <label class="form-label" for="srcitemCode">Search Item</label>
-                    <input class="form-control" id="srcitemCode" placeholder="ID" type="text"><br>
-                    <button type="button" class="btn btn-success" id="searchItem">Search</button>
-                </div>
-                <button type="button" class="btn btn-success" id="addItem">Add</button>
-                <button type="button" class="btn btn-danger" id="deleteItem">Delete</button>
-                <button type="button" class="btn btn-secondary" id="updateItem">Update</button>
-            </div>
-        </div>
+       
         <div class="col-12 col-md-5">
             <div class="mb-2">
                 <label class="form-label " for="itemCode"  id="lblItemCode">Item Code</label>
@@ -212,6 +201,20 @@
                 <input class="form-control" name="unitPrice" id="unitPrice" placeholder="unit Price" type="text">
             </div>
         </div>
+        <div class="col-12 col-md-4">
+            <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2 bg-primary">
+                
+                <h1 class="h1 mb-3">Manage Item</h1>
+                <div class="mb-3">
+                    <label class="form-label" for="srcitemCode">Search Item</label>
+                    <input class="form-control" id="srcitemCode" placeholder="ID" type="text"><br>
+                    <button type="button" class="btn btn-success" id="searchItem">Search</button>
+                </div>
+                <button type="button" class="btn btn-success" id="addItem">Add</button>
+                <button type="button" class="btn btn-danger" id="deleteItem">Delete</button>
+                <button type="button" class="btn btn-secondary" id="updateItem">Update</button>
+            </div>
+        </div>
     </section>
     <section class="row mt-4">
         <div class="col">
@@ -220,8 +223,8 @@
                 <tr>
                     <th>Item Code</th>
                     <th>Item Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
+                    <th>Item Categary</th>
+                    <th>Item Sub Categary</th>
                     <th>Quantity</th>
                     <th>Unit Price</th>
                 </tr>
