@@ -1,18 +1,24 @@
 <?php
 	include('conn.php');
 	
-    $id=$_POST['lblCusId'];
-	$title=$_POST['lblCusTitle'];
-    $fName=$_POST['lblcusFName'];
-    $mName=$_POST['lblcusMName'];
-    $lName=$_POST['lblcsLName'];
-	$contact=$_POST['lblcusContact'];
-    $district=$_POST['lblcusDis'];
+    $id=$_POST['id'];
+	$title=$_POST['title'];
+    $fName=$_POST['fname'];
+    $mName=$_POST['mname'];
+    $lName=$_POST['lname'];
+	$contact=$_POST['contact'];
+    $district=$_POST['district'];
 	
 
-    $sql="insert into `customer` (id,title,first_name,middle_name,last_name,contact_no,district) values(?,?,?,?,?,?,?)";
-	$statment=$conn->prepare($sql);
+    $sql="insert into `customer` (`title`,`first_name`,`middle_name`,`last_name`,`contact_no`,`district`) 
+    values('$title','$fName','$mName','$lName','$contact','$district')";
 
-    $statment->bind_param("sssssss",$id,$title,$fName,$mName,$lName,$contact,$district);
-    $statment->execute();
+    if(mysqli_query($conn,$sql===TRUE)){
+        echo "<script>alert('Details Added');window.location.href='index.html';</script>";
+    }else{
+        echo"Error: ".$sql2. "<br>".mysqli_error($conn);
+
+    }
+    mysqli_close($conn);
+	
 ?>
